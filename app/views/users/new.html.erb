@@ -1,0 +1,8 @@
+Signup
+<hr>
+<%= form_for @user do |f| %>
+    Name : <%= f.text_field :name%><br>
+    Emp Id : <%= f.text_field :emp_id%><br>
+    password : <%= f.text_field :password%><br>
+    <%= f.submit %>
+<% end %>
