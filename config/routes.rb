@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/profile/:id' => 'users#profile'
+  get 'users/new' => 'users#new' , :as => :user
+  get 'users/:id/profile' => 'users#profile'
+  get 'users/:id/edit' => 'users#edit'
 
   resource :users
   # The priority is based upon order of creation: first created -> highest priority.
