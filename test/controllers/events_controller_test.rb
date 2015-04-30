@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ProfilesControllerTest < ActionController::TestCase
+class EventsControllerTest < ActionController::TestCase
   test "should get show" do
     get :show
     assert_response :success

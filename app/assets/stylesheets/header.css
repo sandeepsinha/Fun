@@ -1,0 +1,50 @@
+.for-IE {
+    width: 100%
+}
+
+.headerForIE {
+    background: black;
+    color: #fff;
+    height: auto;
+    position: relative
+}
+
+.header {
+    background: #212121;
+    -moz-box-shadow: 0 -1px 2px #111;
+    -webkit-box-shadow: 0 -1px 2px #111;
+    box-shadow: 0 -1px 2px #111;
+    color: #fff;
+    height: auto;
+    position: relative;
+    width: 100%;
+    zoom: 1
+}
+
+
+.logo {
+    display: block;
+    max-width: 184px;
+    max-height: 95px;
+    width: auto;
+    height: 50px;
+    margin-top: 0
+}
+
+input[type="text"], [type="date"], [type="email"], [type="tel"] {
+    width: 50%;
+    padding-left: 10px;
+    height: 27px;
+    border: 1px solid lightgrey;
+    border-radius: 9px;
+    outline: none;
+    box-shadow: none;
+}
+
+label {
+    cursor: pointer;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 7px;
+    font-size: 15px
+}
