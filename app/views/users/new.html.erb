@@ -1,8 +1,11 @@
+<html>
+<div class="header">
+  <%= image_tag "tw-logo", class: "logo" %></div>
 Signup
-<hr>
 <%= form_for @user do |f| %>
-    Name : <%= f.text_field :name%><br>
-    Emp Id : <%= f.text_field :emp_id%><br>
-    password : <%= f.text_field :password%><br>
+    Name : <%= f.text_field :name %><br>
+    Emp Id : <%= f.text_field :emp_id %><br>
+    password : <%= f.text_field :password %><br>
     <%= f.submit %>
 <% end %>
+</html>
