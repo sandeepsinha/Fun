@@ -1,0 +1,10 @@
+<h1> Edit Your Profile Here </h1>
+<%= form_for @user, :url => { :action => "update" }, :html => { :method => "put" } do |f| %>
+    <p>
+      <%= f.label :name %> :
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.submit "Save" %>
+    </p>
+<% end %>

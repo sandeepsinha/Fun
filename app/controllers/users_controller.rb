@@ -1,3 +1,4 @@
+require 'pry'
 class UsersController < ApplicationController
   def index
   end
@@ -13,9 +14,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
+  def update
+    User.update(11111, :name => params[:user][:name])
+    redirect_to :action => "profile", :id => 11111
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def profile
     @user = User.find(params[:id])
   end
+
 
   private
   def user_params
