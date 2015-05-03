@@ -12,7 +12,9 @@ class EventsController < ApplicationController
     # binding.pry
     @event = Event.new(event_params)
     if @event.save
-      redirect_to new_events_path
+      redirect_to @event
+    else
+      render 'new'
     end
   end
 
