@@ -15,8 +15,8 @@ class UsersController < ApplicationController
       @user = User.find(params[:user][:emp_id])
       if @user[:password] == params[:user][:password]
         session[:user_id] = @user[:emp_id]
-        cookies[:login] = { :value => "FUN", :expires => Time.now + 0.10}
-        redirect_to action: 'profile'
+        session[:expiry_time] = 10.seconds.from_now
+        redirect_to users_profile_path
       else
         redirect_to action: 'login', :error => "Invalid Password"
       end
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 
   def update
     User.update(session[:user_id], :name => params[:user][:name])
-    redirect_to :action => "profile", :id => session[:user_id]
+    redirect_to :action => 'profile'
   end
 
   def edit
@@ -63,8 +63,8 @@ class UsersController < ApplicationController
   end
 
   def require_login
-    if(!session[:user_id] && cookies[:login][:value] == 'FUN')
-      redirect_to action: 'login', :error => 'Your session is completed. Please login again'
+    if !session[:user_id]
+      redirect_to action: 'login'
     end
   end
 end
