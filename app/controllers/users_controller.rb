@@ -16,12 +16,11 @@ class UsersController < ApplicationController
       if @user[:password] == params[:user][:password]
         session[:user_id] = @user[:emp_id]
         session[:expiry_time] = 10.seconds.from_now
-        redirect_to users_profile_path
+        redirect_to users_dashboard_path
       else
         redirect_to action: 'login', :error => "Invalid Password"
       end
     else
-      @user[:emp_id] = "Invalid"
       redirect_to action: 'login', :error => "Invalid Employee Id"
     end
   end
@@ -39,23 +38,18 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-
+  def dashboard
+    @user = User.find(session[:user_id])
   end
 
   def update
     User.update(session[:user_id], :name => params[:user][:name])
-    redirect_to :action => 'profile'
+    redirect_to :action => 'dashboard'
   end
 
   def edit
     @user = User.find(session[:user_id])
   end
-
-  def profile
-    @user = User.find(session[:user_id])
-  end
-
 
   private
   def user_params
