@@ -1,1 +1,18 @@
-hello
+<div class="container">
+  <div class="sidebar">
+    <div>
+      <%= image_tag 'event.jpeg'%>
+    </div>
+  </div>
+  <div class="mainarea">
+    <strong><%=@event.name %></strong>
+    <br/>
+    <br/>
+    <%=@event.description %>
+    <br/>
+    <br/>
+    date:<%=@event.date.strftime('%B %d, %Y') %><br/>
+    time:<%=@event.time.strftime('%I:%M%p') %><br/>
+    venue:<%=@event.venue %>
+  </div>
+</div>
