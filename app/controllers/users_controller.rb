@@ -44,12 +44,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    User.update(11111, :name => params[:user][:name])
-    redirect_to :action => "profile", :id => 11111
+    User.update(session[:user_id], :name => params[:user][:name])
+    redirect_to :action => "profile", :id => session[:user_id]
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def profile
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
   end
 
   def require_login
-    if(!session[:user_id] )
+    if(!session[:user_id] && cookies[:login][:value] == 'FUN')
       redirect_to action: 'login', :error => 'Your session is completed. Please login again'
     end
   end
