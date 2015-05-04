@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  emp_id: MyString
-  password: MyString
+tester_1:
+  name: tester_1
+  emp_id: 11111
+  password: pwd
 
-two:
-  name: MyString
-  emp_id: MyString
-  password: MyString
+tester_2:
+  name: tester_2
+  emp_id: 11112
+  password: pwd

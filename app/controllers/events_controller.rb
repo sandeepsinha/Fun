@@ -1,7 +1,11 @@
 require 'pry'
 class EventsController < ApplicationController
+  def index
+    @events = Event.all
+  end
 
   def show
+    @event = Event.find(29)
   end
 
   def new
@@ -12,7 +16,7 @@ class EventsController < ApplicationController
     # binding.pry
     @event = Event.new(event_params)
     if @event.save
-      redirect_to @event
+      redirect_to action: 'index'
     else
       render 'new'
     end
