@@ -1,9 +1,26 @@
 <h1>Events</h1>
+upcoming events
+<br/>
 <table>
-    <% @events.each do |event| %>
+    <% @events.each do |event|%>
+      <% if event.date >= DateTime.now %>
         <tr>
           <td><%= event.name %></td>
           <td><%= link_to 'Show', events_path(event.id) %></td>
         </tr>
-    <% end %>
+      <% end %>
+<% end %>
+</table>
+<br/>
+past events
+<br/>
+<table>
+  <% @events.each do |event| %>
+      <% if event.date < DateTime.now %>
+          <tr>
+            <td><%= event.name %></td>
+            <td><%= link_to 'Show', events_path(event.id) %></td>
+          </tr>
+      <%end%>
+  <% end %>
 </table>
