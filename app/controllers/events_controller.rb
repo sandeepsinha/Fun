@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    # @event = Event.find(params[:id])
+    @events = Event.all
   end
 
   def new
@@ -15,7 +16,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to action:'list'
+      redirect_to :events
     else
       render 'new'
     end
@@ -23,6 +24,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :description, :date ,:time ,:venue)
+    params.require(:event).permit(:name, :description ,:time ,:venue)
   end
 end

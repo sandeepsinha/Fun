@@ -5,3 +5,195 @@
     margin:0;
     padding:0;
 }
+
+
+.events_list{
+    text-transform: uppercase;
+    zoom: 1;
+}
+
+.events_list:before {
+    content: '';
+    display: block;
+}
+.events_list:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.events_list li {
+    width: 296px;
+    margin: 5px;
+    float: left;
+}
+.events_list li a {
+    -webkit-box-shadow: 0px 0px 5px #aaaaaa;
+    -moz-box-shadow: 0px 0px 5px #aaaaaa;
+    box-shadow: 0px 0px 5px #aaaaaa;
+    display: block;
+    padding: 8px;
+    border-left: 5px solid #aaa;
+    color: #666;
+    line-height: 1.2em;
+    text-align: left;
+}
+.events_list li a.color1,
+.events_list li a.color1 * {
+    border-color: #e36100;
+}
+.events_list li a.color1 .partner_type,
+.events_list li a.color1 * .partner_type {
+    color: #e36100;
+}
+.events_list li a.color2,
+.events_list li a.color2 * {
+    border-color: #eb49c1;
+}
+.events_list li a.color2 .partner_type,
+.events_list li a.color2 * .partner_type {
+    color: #eb49c1;
+}
+.events_list li a.color3,
+.events_list li a.color3 * {
+    border-color: #dea128;
+}
+.events_list li a.color3 .partner_type,
+.events_list li a.color3 * .partner_type {
+    color: #dea128;
+}
+.events_list li a.color4,
+.events_list li a.color4 * {
+    border-color: #4294c1;
+}
+.events_list li a.color4 .partner_type,
+.events_list li a.color4 * .partner_type {
+    color: #4294c1;
+}
+.events_list li a.color5,
+.events_list li a.color5 * {
+    border-color: #7f007f;
+}
+.events_list li a.color5 .partner_type,
+.events_list li a.color5 * .partner_type {
+    color: #7f007f;
+}
+.events_list li a.color6,
+.events_list li a.color6 * {
+    border-color: #ad141f;
+}
+.events_list li a.color6 .partner_type,
+.events_list li a.color6 * .partner_type {
+    color: #ad141f;
+}
+.events_list li a.color7,
+.events_list li a.color7 * {
+    border-color: #649f4d;
+}
+.events_list li a.color7 .partner_type,
+.events_list li a.color7 * .partner_type {
+    color: #649f4d;
+}
+.events_list li a.color8,
+.events_list li a.color8 * {
+    border-color: #333333;
+}
+.events_list li a.color8 .partner_type,
+.events_list li a.color8 * .partner_type {
+    color: #333333;
+}
+.events_list li a .img_panel {
+    height: 188px;
+    overflow: hidden;
+    text-align: center;
+    max-width: 290px;
+}
+.events_list li a h2 {
+    height: 98px;
+    overflow: hidden;
+    font-size: 14pt;
+}
+.events_list li a .info_panel {
+    zoom: 1;
+    color: #999;
+}
+.events_list li a .info_panel:before {
+    content: '';
+    display: block;
+}
+.events_list li a .info_panel:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.events_list li a .info_panel div {
+    float: left;
+    height: 56px;
+    overflow: hidden;
+    line-height: 20px;
+    font-family: "font_secondary2", arial;
+}
+.events_list li a .info_panel div .label {
+    display: block;
+    font-size: 10px;
+}
+.events_list li a .info_panel div .value {
+    display: block;
+    font-size: 13px;
+}
+.events_list li a .info_panel div.date {
+    width: 80px;
+    padding: 10px 5px 0px 0px;
+}
+.events_list li a .info_panel div.author {
+    width: 178px;
+    padding: 20px 0px 0px 10px;
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+.events_list li a .info_panel div.author .value {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+}
+.events_list li a:hover {
+    background: #eee;
+    color: #000;
+    -webkit-box-shadow: 2px 2px 5px #aaaaaa;
+    -moz-box-shadow: 2px 2px 5px #aaaaaa;
+    box-shadow: 2px 2px 5px #aaaaaa;
+}
+.events_list.partners h2,
+.events_list.partners .partner_since,
+.events_list.partners .partner_type {
+    text-align: center;
+}
+.events_list.partners h2 {
+    padding-top: 10px;
+}
+.events_list.partners .partner_since {
+    font-size: 18px;
+    line-height: 20px;
+    padding: 10px 0px;
+}
+.events_list.shows .value {
+    font-family: "font_primary_bold", arial;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+.events_list.shows .value.venue {
+    height: 90px;
+    overflow: hidden;
+}
+.events_list.rewards .location {
+    height: 70px;
+    overflow: hidden;
+}
+.events_list.rewards li a {
+    height: 416px;
+}
+.events_list.rewards li img {
+    max-width: 100%;
+}
+.events_list.rewards .date {
+    font-size: 20px;
+}

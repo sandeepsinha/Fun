@@ -1,18 +1,27 @@
-<div class="container">
-  <div class="sidebar">
-    <div>
-      <%= image_tag 'event.jpeg'%>
-    </div>
-  </div>
-  <div class="mainarea">
-    <strong><%=@event.name %></strong>
-    <br/>
-    <br/>
-    <%=@event.description %>
-    <br/>
-    <br/>
-    date:<%=@event.date.strftime('%B %d, %Y') %><br/>
-    time:<%=@event.time.strftime('%I:%M%p') %><br/>
-    venue:<%=@event.venue %>
-  </div>
-</div>
+<ul class="events_list" xmlns="http://www.w3.org/1999/html">
+  <% @events.each do |event| %>
+      <li>
+        <a href="#" class="item type1">
+          <div class="img_panel">
+            <%= image_tag "event" %>
+          </div>
+          <h2><%= event.name %> </h2>
+
+          <div class="info_panel">
+            <div class="date">
+              <span class="label"> Date </span>
+              <span class="value"><%= event.time %></span>
+            </div>
+            <div class="author">
+              <span class="label"> Venue </span>
+              <span class="value">
+              <%= event.venue %>
+              </span>
+            </div>
+          </div>
+
+        </a>
+      </li>
+
+  <% end %>
+</ul>
