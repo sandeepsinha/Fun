@@ -15,7 +15,6 @@ class UsersController < ApplicationController
       @user = User.find(params[:user][:emp_id])
       if @user[:password] == params[:user][:password]
         session[:user_id] = @user[:emp_id]
-        session[:expiry_time] = 10.seconds.from_now
         redirect_to users_dashboard_path
       else
         redirect_to action: 'login', :error => "Invalid Password"
@@ -24,8 +23,6 @@ class UsersController < ApplicationController
       redirect_to action: 'login', :error => "Invalid Employee Id"
     end
   end
-
-  before_action :require_login , :except => [:login, :validate]
 
   def new
     @user = User.new
@@ -37,6 +34,10 @@ class UsersController < ApplicationController
       redirect_to new_users_path
     end
   end
+
+  before_action :require_login , :except => [:new, :create, :login, :validate]
+
+
 
   def dashboard
     @user = User.find(session[:user_id])
@@ -51,6 +52,16 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(session[:user_id])
+    @error = params[:error]
+  end
+
+  def change_password
+    if params[:user][:password] == params[:user][:conform_password]
+      User.update(session[:user_id], :password => params[:user][:password])
+      redirect_to action: 'edit', :error => "Password Changed Sucessfully"
+    else
+      redirect_to action: 'edit', :error => "Password Miss Matched"
+    end
   end
 
   private

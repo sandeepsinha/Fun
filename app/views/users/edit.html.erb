@@ -1,10 +1,34 @@
-<h1> Edit Your Profile Here </h1>
-<%= form_for @user, :url => { :action => "update" }, :html => { :method => "put" } do |f| %>
-    <p>
-      <%= f.label :name %> :
-      <%= f.text_field :name %>
-    </p>
-    <p>
-      <%= f.submit "Save" %>
-    </p>
-<% end %>
+<div>
+    <h1> Edit Your Profile Here </h1>
+    <div>
+        <%= form_for @user, :url => { :action => "update" }, :html => { :method => "put" } do |f| %>
+            <p>
+              <%= f.label :name %> :
+              <%= f.text_field :name %>
+            </p>
+            <p>
+              <%= f.submit "Save" %>
+            </p>
+        <% end %>
+    </div><br/>
+    <div>
+      Change Password:
+      <%= form_for @user, :url => { :action => "change_password"}, :html => { :method => 'post'} do |f| %>
+          <p>
+            <%= f.label :New_Password %> :
+            <%= f.password_field :password %>
+          </p>
+          <p>
+            <%= f.label :Conform_Password %> :
+            <%= f.password_field :conform_password %>
+          </p>
+          <p>
+            <%= f.submit 'Change' %>
+          </p>
+      <% end %>
+      <% if @error %>
+          <%= @error %>
+      <% end %>
+
+    </div>
+</div>

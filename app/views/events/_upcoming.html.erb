@@ -1,5 +1,5 @@
 <% @upcoming_events.each do |event|%>
     <p>
-      <%= link_to event.name, events_path(event.id) %>
+      <%= link_to event.name, '/events/' + event.id.to_s %>
     </p>
 <% end %>
