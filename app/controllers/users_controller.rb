@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     end
   end
 
-  before_action :require_login , :except => [:login, :validate]
+  before_action :require_login , :except => [:new,:create, :login, :validate]
 
   def new
     @user = User.new
