@@ -1,5 +1,5 @@
 <% @past_events.each do |event|%>
     <p>
-      <%= event.name %>
+      <%= link_to event.name, events_path(event.id) %>
     </p>
 <% end %>
