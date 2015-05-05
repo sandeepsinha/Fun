@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'users/login' => 'users#login'
   get 'users/dashboard' => 'users#dashboard'
   post 'users/validate'
-  get 'users/new' => 'users#new' , :as => :user
   get 'users/profile' => 'users#profile'
   get 'users/edit' => 'users#edit'
   post 'users/change_password' => 'users#change_password'
