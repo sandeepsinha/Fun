@@ -40,7 +40,8 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = User.find(session[:user_id])
-    @upcomingevents = Event.where(Event.arel_table[:date].gt(Date.today.prev_day))
+    @upcoming_events = Event.where(Event.arel_table[:date].gt(Date.today.prev_day))
+    @past_events = Event.where(Event.arel_table[:date].lt(Date.today))
   end
 
   def update

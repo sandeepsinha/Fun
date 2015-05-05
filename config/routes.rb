@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'events/list' => 'events#list'
   get 'events/show' => 'events#show'
   get 'events/upcoming' => 'events#upcoming'
+  get 'events/past' => 'evens#past'
 
   resource :users
   resource :events
