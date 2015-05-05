@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class EventsControllerTest < ActionController::TestCase
-  test 'should get index' do
-    get :index
+  test 'should get list' do
+    get :list
     assert_response :success
   end
 

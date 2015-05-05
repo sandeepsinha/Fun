@@ -1,11 +1,10 @@
 require 'pry'
 class EventsController < ApplicationController
-  def index
+  def list
     @events = Event.all
   end
 
   def show
-    # binding.pry
     @event = Event.find(params[:format])
   end
 
@@ -16,7 +15,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to action:'index'
+      redirect_to action:'list'
     else
       render 'new'
     end

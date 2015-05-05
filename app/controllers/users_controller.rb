@@ -40,11 +40,12 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = User.find(session[:user_id])
+    @upcomingevents = Event.where(Event.arel_table[:date].gt(Date.today.prev_day))
   end
 
   def update
     User.update(session[:user_id], :name => params[:user][:name])
-    redirect_to :action => 'dashboard'
+    redirect_to users_dashboard_path
   end
 
   def edit
