@@ -1,16 +1,22 @@
-<div style="display:inline-block; width:40%">
-  <%= render users_profile_path %>
+<%= stylesheet_link_tag "bootstrap" %>
+
+<div class = "row container lead">
+  <div class = "col-md-3">
+    <%= render users_profile_path %>
+  </div>
+  <div class="col-sm-1"></div>
+  <div class = "col-md-6">
+    <div>
+      <h2>Upcoming Events</h2>
+      <%= render events_upcoming_path %>
+    </div>
+    <br/>
+    <div>
+      <h2>Past Events</h2>
+      <%= render events_past_path %>
+    </div>
+  </div>
+
 </div>
 
-<div style="display:inline-block">
-  <div>
-    <h2>Upcoming Events</h2>
-    <%= render events_upcoming_path %>
-  </div>
-  <br/>
-  <div>
-    <h2>Past Events</h2>
-        <%= render events_past_path %>
-  </div>
-</div>
 

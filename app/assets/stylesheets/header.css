@@ -31,15 +31,15 @@
     margin-top: 0
 }
 
-input[type="text"], [type="date"], [type="email"], [type="tel"] {
-    width: 50%;
-    padding-left: 10px;
-    height: 27px;
-    border: 1px solid lightgrey;
-    border-radius: 9px;
-    outline: none;
-    box-shadow: none;
-}
+/*input[type="text"], [type="date"], [type="email"], [type="tel"] {*/
+    /*width: 50%;*/
+    /*padding-left: 10px;*/
+    /*height: 27px;*/
+    /*border: 1px solid lightgrey;*/
+    /*border-radius: 9px;*/
+    /*outline: none;*/
+    /*box-shadow: none;*/
+/*}*/
 
 label {
     cursor: pointer;

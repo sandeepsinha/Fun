@@ -1,0 +1,15 @@
+<div class = "">
+  <%= form_for @user, :html => {:class => "form-group"} do |f| %>
+      Name:
+      <%= f.text_field :name, :class => "form-control" %>
+      <br/>
+      Employee Id:
+      <%= f.text_field :emp_id, :class => "form-control" %>
+      <br/>
+      Password:
+      <%= f.password_field :password, :class => "form-control" %>
+      <br/>
+      <%= f.submit :class => "btn btn-default" %>
+  <% end %>
+</div>
+

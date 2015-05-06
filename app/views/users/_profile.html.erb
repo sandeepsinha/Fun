@@ -1,7 +1,8 @@
-<p>
-    <%= image_tag "default.jpg" %>
-    <h1><%= @user.name %> </h1>
-    <h3>Points:  <%= @user.points %></h3>
-    <a href="edit"> Edit Profile</a>
-</p>
+<div class = "container" >
+  <br/>
+  <%= image_tag "images.jpeg", :class => "img-rounded", :width => "250", :height => "250" %>
+  <h1><%= @user.name %> </h1>
+  <h3>Points:  <%= @user.points %></h3>
+  <u><a href="edit"> Edit Profile</a></u>
+</div>
 

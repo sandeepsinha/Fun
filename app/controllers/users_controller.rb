@@ -1,9 +1,6 @@
 require 'pry'
 class UsersController < ApplicationController
   def index
-  end
-
-  def login
     reset_session
     @user = User.new
     @error = params[:error]
@@ -17,15 +14,11 @@ class UsersController < ApplicationController
         session[:user_id] = @user[:emp_id]
         redirect_to users_dashboard_path
       else
-        redirect_to action: 'login', :error => "Invalid Password"
+        redirect_to action: 'index', :error => "Invalid Password"
       end
     else
-      redirect_to action: 'login', :error => "Invalid Employee Id"
+      redirect_to action: 'index', :error => "Invalid Employee Id"
     end
-  end
-
-  def new
-    @user = User.new
   end
 
   def create
@@ -35,9 +28,12 @@ class UsersController < ApplicationController
     end
   end
 
-  before_action :require_login , :except => [:new, :create, :login, :validate]
+  before_action :require_login , :except => [:index, :new, :create, :validate]
 
 
+  def new
+    @user = User.new
+  end
 
   def dashboard
     @user = User.find(session[:user_id])
@@ -71,7 +67,7 @@ class UsersController < ApplicationController
 
   def require_login
     if !session[:user_id]
-      redirect_to action: 'login'
+      redirect_to action: 'index'
     end
   end
 end

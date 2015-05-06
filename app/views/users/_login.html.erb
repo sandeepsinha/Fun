@@ -1,0 +1,17 @@
+<div class = "">
+  <%= form_for @user, :url => { :action => "validate" }, :html => { :method => "post" ,:class => "form-group"} do |f| %>
+        Employee Id:
+        <%= f.text_field :emp_id, :class => "form-control" %>
+        <br/>
+        Password:
+        <%= f.password_field :password, :class => "form-control" %>
+        <br/>
+        <%= f.submit "Login" ,:class => "btn btn-default" %>
+
+  <% end %>
+
+  <% if @error %>
+    <p class="text-danger"><%= @error %> </p>
+  <% end %>
+
+</div>

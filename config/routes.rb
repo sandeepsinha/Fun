@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   resource :users
   resource :events
-  root 'users#login'
+  root 'users#index'
 
 end
