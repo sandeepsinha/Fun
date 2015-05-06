@@ -1,8 +1,7 @@
 <ul class="events_list" xmlns="http://www.w3.org/1999/html">
   <% @events.each do |event| %>
       <li>
-        <a href=>
-          <%= link_to '', '/events/'+event.id.to_s%>
+        <a href=<%= '/events/'+ event.id.to_s%>>
           <div class="img_panel">
             <%= image_tag "event" %>
           </div>
