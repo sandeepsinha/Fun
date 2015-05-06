@@ -6,6 +6,31 @@
     padding:0;
 }
 
+.container {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position:absolute;
+}
+
+.sidebar {
+    float: left;
+    width: 25%;
+    display:inline-block;
+    padding: 9px;
+    border-right-style: inset;
+    height: 100%;
+}
+
+.mainarea {
+    float: left;
+    display:inline-block;
+    padding: 10px;
+}
+
+.img_panel_event{
+    display: block;
+}
 
 .events_list{
     text-transform: uppercase;
