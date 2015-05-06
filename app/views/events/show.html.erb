@@ -1,25 +1,25 @@
 <ul class="events_list" xmlns="http://www.w3.org/1999/html">
   <% @events.each do |event| %>
       <li>
-        <a href="#">
+        <a href=>
+          <%= link_to '', '/events/'+event.id.to_s%>
           <div class="img_panel">
             <%= image_tag "event" %>
           </div>
           <h2><%= event.name %> </h2>
 
-          <div class="info_panel">
-            <div class="date">
-              <span class="label"> Date </span>
-              <span class="value"><%= event.time %></span>
+            <div class="info_panel">
+                <div class="date">
+                  <span class="label"> Date </span>
+                  <span class="value"><%= event.time %></span>
+                </div>
+                <div class="author">
+                  <span class="label"> Venue </span>
+                  <span class="value">
+                  <%= event.venue %>
+                  </span>
+                </div>
             </div>
-            <div class="author">
-              <span class="label"> Venue </span>
-              <span class="value">
-              <%= event.venue %>
-              </span>
-            </div>
-          </div>
-
         </a>
       </li>
 

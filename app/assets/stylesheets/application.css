@@ -6,6 +6,31 @@
     padding:0;
 }
 
+.container {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position:absolute;
+}
+
+.sidebar {
+    float: left;
+    width: 25%;
+    display:inline-block;
+    padding: 9px;
+    border-right-style: inset;
+    height: 100%;
+}
+
+.mainarea {
+    float: left;
+    display:inline-block;
+    padding: 10px;
+}
+
+.img_panel_event{
+    display: block;
+}
 
 .events_list{
     text-transform: uppercase;
@@ -32,11 +57,9 @@
     box-shadow: 0px 0px 5px #aaaaaa;
     display: block;
     padding: 8px;
-    margin-right: 5px;
-    padding-right: 2px;
     border-left: 5px solid #aaa;
     color: #666;
-    line-height: 1.0em;
+    line-height: 1.2em;
     text-align: left;
 }
 .events_list li a.color1,
@@ -107,11 +130,10 @@
     height: 188px;
     overflow: hidden;
     text-align: center;
-    max-width: 234px;
+    max-width: 290px;
 }
 .events_list li a h2 {
-    padding-top: 5px;
-    height: 60px;
+    height: 98px;
     overflow: hidden;
     font-size: 14pt;
 }
