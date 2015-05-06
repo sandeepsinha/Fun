@@ -25,15 +25,17 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to new_users_path
+    else
+      render "index"
     end
   end
-
-  before_action :require_login , :except => [:index, :new, :create, :validate]
-
 
   def new
     @user = User.new
   end
+
+  before_action :require_login , :except => [:index, :new, :create, :validate]
+
 
   def dashboard
     @user = User.find(session[:user_id])

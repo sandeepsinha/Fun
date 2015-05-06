@@ -11,5 +11,10 @@
       <br/>
       <%= f.submit :class => "btn btn-default" %>
   <% end %>
+  <% if @user.errors.any? %>
+      <b class="text-danger"><%= Array(@user.errors).to_sentence%> </b>
+      <i class="text-danger">can't be blank </i>
+  <% end %>
+
 </div>
 
